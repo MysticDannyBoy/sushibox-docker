@@ -1,0 +1,9 @@
+name: ng_container
+services:
+    nginx:
+        image: nginx:latest
+        ports:
+            - 9100:80
+            - 9101:443
+        volumes:
+            - /home/xoyowiz/MyBlackBox/Docker/Nginx/html:/usr/share/nginx/html
