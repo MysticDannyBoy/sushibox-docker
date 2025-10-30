@@ -1,0 +1,10 @@
+name: CONTAINER_NAME
+services:
+    CONTAINER_NAME:
+        image: IMAGE_NAME
+        container_name: CONTAINER_NAME
+        ports:
+            - HOST_PORT:CONT_PORT
+        volumes:
+            - HOST_MOUNT:CONT_MOUNT
+        restart: always

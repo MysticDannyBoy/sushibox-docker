@@ -1,0 +1,12 @@
+name: pt_container
+services:
+    pt_container:
+        image: portainer/portainer-ce:lts
+        container_name: pt_container
+        ports:
+            - 9000:8000
+            - 9001:9443
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+            - /home/xoyowiz/MyBlackBox/Docker/Portainer/data:/data
+        restart: always

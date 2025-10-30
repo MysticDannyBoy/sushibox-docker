@@ -1,0 +1,13 @@
+name: np_container
+services:
+    CONTAINER_NAME:
+        image: jc21/nginx-proxy-manager:latest
+        container_name: np_container
+        ports:
+            - 9110:80
+            - 9111:443
+            - 9112:81
+        volumes:
+            - /home/xoyowiz/MyBlackBox/Docker/Nginx-Proxy-Manager/data:/data
+            - /home/xoyowiz/MyBlackBox/Docker/Nginx-Proxy-Manager/letsencrypt:/etc/letsencrypt
+        restart: unless-stopped
