@@ -1,0 +1,21 @@
+name: nextcloud-aio-mastercontainer
+services:
+    all-in-one:
+        init: true
+        container_name: nextcloud-aio-mastercontainer
+        restart: always
+        ports:
+            - 8080:8080
+        environment:
+            - APACHE_PORT=11000
+            - APACHE_IP_BINDING=0.0.0.0
+            - APACHE_ADDITIONAL_NETWORK=np_container_default
+            - SKIP_DOMAIN_VALIDATION=false
+        volumes:
+            - nextcloud_aio_mastercontainer:/mnt/docker-aio-config
+            - /var/run/docker.sock:/var/run/docker.sock:ro
+        image: ghcr.io/nextcloud-releases/all-in-one:latest
+volumes:
+    nextcloud_aio_mastercontainer:
+        external: true
+        name: nextcloud_aio_mastercontainer
