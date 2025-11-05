@@ -4,8 +4,8 @@ services:
         image: portainer/portainer-ce:lts
         container_name: pt_container
         ports:
-            - 9000:8000
-            - 9001:9443
+            - 21001:8000
+            - 21002:9443
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
             - /home/xoyowiz/MyBlackBox/Docker/Portainer/data:/data

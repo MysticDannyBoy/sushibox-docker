@@ -4,9 +4,9 @@ services:
         image: jc21/nginx-proxy-manager:latest
         container_name: np_container
         ports:
-            - 9110:80
-            - 9111:443
-            - 9112:81
+            - 20001:80
+            - 20002:81
+            - 20003:443
         volumes:
             - /home/xoyowiz/MyBlackBox/Docker/Nginx-Proxy-Manager/data:/data
             - /home/xoyowiz/MyBlackBox/Docker/Nginx-Proxy-Manager/letsencrypt:/etc/letsencrypt
