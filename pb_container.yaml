@@ -1,0 +1,10 @@
+name: pb_container
+services:
+    pb_container:
+        image: privatebin/nginx-fpm-alpine
+        container_name: pb_container
+        ports:
+            -  36001:8080
+        volumes:
+            - /home/xoyowiz/MyBlackBox/Docker/privatebin-data:/srv/data
+        restart: always
