@@ -1,0 +1,22 @@
+name: jf_container
+services:
+    jf_container:
+        image: jellyfin/jellyfin
+        user: 1000:1000
+        container_name: jf_container
+        ports:
+            - 34001:8096/tcp
+            - 34002:7359/udp
+        volumes:
+            - /home/xoyowiz/MyBlackBox/Docker/Jellyfin/config:/config
+            - /home/xoyowiz/MyBlackBox/Docker/Jellyfin/cache:/cache
+            - type: bind
+              source: /disk1/Torrent
+              target: /media
+        restart: unless-stopped
+        networks:
+            - proxy
+
+networks:
+    proxy:
+        external: true
