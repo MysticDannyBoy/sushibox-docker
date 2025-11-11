@@ -4,7 +4,7 @@ services:
         image: lscr.io/linuxserver/qbittorrent:latest
         container_name: qb_container
         ports:
-        - 37001:8080
+        - 37001:8123
         - 6881:6881
         - 6881:6881/udp
         volumes:
@@ -15,6 +15,6 @@ services:
             - PUID=1000
             - PGID=1000
             - TZ=Etc/UTC
-            - WEBUI_PORT=8080
+            - WEBUI_PORT=8123
             - TORRENTING_PORT=6881
             
