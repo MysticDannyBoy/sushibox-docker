@@ -1,0 +1,24 @@
+name: op_container
+services:
+    op_container:
+        image: openproject/openproject:16
+        container_name: op_container
+        ports:
+            - 16001:80
+        volumes:
+            - /home/xoyowiz/MyBlackBox/Docker/OpenProject/pgdata:/var/openproject/pgdata
+            - /home/xoyowiz/MyBlackBox/Docker/OpenProject/assets:/var/openproject/assets
+        restart: always
+        environment:
+            - SECRET_KEY_BASE=h9nxplNPzvUfOrPdqB8zCnNIUpwnDpMS
+            - OPENPROJECT_HOST__NAME=localhost:16001
+            - OPENPROJECT_HTTPS=false
+            - OPENPROJECT_DEFAULT__LANGUAGE=en
+        networks:
+            - proxy
+        stdin_open: true
+        tty: true
+
+networks:
+    proxy:
+        external: true

@@ -8,3 +8,9 @@ services:
         volumes:
             - HOST_MOUNT:CONT_MOUNT
         restart: always
+        networks:
+            - proxy
+
+networks:
+    proxy:
+        external: true
