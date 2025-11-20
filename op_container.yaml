@@ -6,8 +6,8 @@ services:
         ports:
             - 16001:80
         volumes:
-            - /home/xoyowiz/MyBlackBox/Docker/OpenProject/pgdata:/var/openproject/pgdata
-            - /home/xoyowiz/MyBlackBox/Docker/OpenProject/assets:/var/openproject/assets
+            - /home/xoyowiz/OpenProject/pgdata:/var/openproject/pgdata
+            - /home/xoyowiz/OpenProject/assets:/var/openproject/assets
         restart: always
         environment:
             - SECRET_KEY_BASE=h9nxplNPzvUfOrPdqB8zCnNIUpwnDpMS
