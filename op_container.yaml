@@ -11,7 +11,7 @@ services:
         restart: always
         environment:
             - SECRET_KEY_BASE=h9nxplNPzvUfOrPdqB8zCnNIUpwnDpMS
-            - OPENPROJECT_HOST__NAME=localhost:16001
+            - OPENPROJECT_HOST__NAME=op.dd21.hu
             - OPENPROJECT_HTTPS=false
             - OPENPROJECT_DEFAULT__LANGUAGE=en
         networks:
