@@ -1,0 +1,16 @@
+name: ol_container
+services:
+    ol_container:
+        image: ollama/ollama
+        container_name: ol_container
+        ports:
+            - 11434:11434
+        volumes:
+            - /home/xoyowiz/MyBlackBox/Docker/Ollama/ollama:/root/.ollama
+        restart: always
+        networks:
+            - proxy
+
+networks:
+    proxy:
+        external: true
