@@ -1,0 +1,18 @@
+name: ow_container
+services:
+    ow_container:
+        image: ghcr.io/open-webui/open-webui:main
+        container_name: ow_container
+        ports:
+            - 13000:8080
+        restart: always
+        volumes:
+          - /home/xoyowiz/MyBlackBox/Docker/OpenWebUI/data:/app/backend/data
+        networks:
+            - proxy
+        environment:
+            - OLLAMA_BASE_URL=http://ollama:11434
+
+networks:
+    proxy:
+        external: true
